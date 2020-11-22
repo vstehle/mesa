@@ -5,11 +5,7 @@ set -eux
 
 if [ ! -e build/build.ninja ]; then
 	meson . build \
-		-Ddri-drivers= \
-		-Dgallium-drivers=panfrost,kmsro \
-		-Dlibunwind=false \
-		-Dplatforms=x11,drm,surfaceless \
-		-Dvulkan-drivers=
+		-Dgallium-drivers=panfrost,kmsro,swrast
 fi
 
 ninja -C build
